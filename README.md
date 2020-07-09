@@ -20,5 +20,5 @@ Fonctionnalités :
 - Le package a été développé pour la version française du site, toutefois l'architecture du site reste la même pour les autres versions, et il est facile d'adapter le code à ces versions en modifiant quelques passages dans le fichier functions.py. -----> Versions internationales à venir!
 - Version interactive : l'utilisateur peut simplement répondre aux questions du programme pour faire la recherche à travers l'API
 
-[1] Vinted Wikipedia EN : https://en.wikipedia.org/wiki/Vinted
+[1] Vinted Wikipedia EN : https://en.wikipedia.org/wiki/Vinted \n
 [2] Vinted Wikipedia FR : https://fr.wikipedia.org/wiki/Vinted
