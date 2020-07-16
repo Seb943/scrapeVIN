@@ -167,6 +167,10 @@ def research_and_scrape(query, criteria_string, end_page = 2):
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
 
+
+    if not os.path.exists('./Scraped'):
+        os.makedirs('./Scraped')
+
     DATA_ALL.to_csv("./Scraped/{}_{}_page{}_page{}.csv".format(query.replace(' ', '-'), str(datetime.now()).replace(' ','-').\
         replace(':','-').replace('.','-'), start_page, end_page), sep = ";", index = False)
 
