@@ -51,13 +51,16 @@ dict_brand = dict({'nike':'&brand_id[]=53', 'adidas': '&brand_id[]=14', 'zara':'
 dict_condition = dict({'new with label':'&status[]=6', 'new': '&status[]=1', 'very good condition': '&status[]=2', \
 'good condition':'&status[]=3', 'satisfactory':'&status[]=4'})
 
-os.chdir("C:\\Users\\Sébastien CARARO\\Desktop\\Vinted\\Data")
+#os.chdir("C:\\Users\\Sébastien CARARO\\Desktop\\Vinted\\Data")
 global driver
 options = webdriver.ChromeOptions()
 #options.add_argument('--ignore-certificate-errors')
 #options.add_argument('--ignore-ssl-errors')
 #options.add_experimental_option("prefs", {"profile.default_content_setting_values.cookies": 2})
-driver = webdriver.Chrome(executable_path = "C:\\Users\\Sébastien CARARO\\Desktop\\chromedriver1.exe", chrome_options=options)
+global DRIVER_LOCATION
+DRIVER_LOCATION = "C:\\Users\\Sébastien CARARO\\Desktop\\chromedriver1.exe"
+
+driver = webdriver.Chrome(executable_path = DRIVER_LOCATION, chrome_options=options)
 
 
 
