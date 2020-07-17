@@ -9,11 +9,9 @@ unofficial VINTED API for Python
 For the moment, the package is only working on the French website, international versions coming soon. :soon: <br /><br />
 Website | State of development
 --------|----------------
-France | :heavy_check_mark:
-Belgium| :heavy_check_mark:
-Luxembourg | :heavy_check_mark:
-United States | :heavy_multiplication_x:
-United Kingdom| :heavy_multiplication_x:
+France, Belgium, Luxembourg| :heavy_check_mark:
+United States | :heavy_check_mark:
+United Kingdom| :heavy_check_mark:
 Germany| :heavy_multiplication_x:
 Austria| :heavy_multiplication_x:
 Lithuania| :heavy_multiplication_x:
@@ -25,8 +23,9 @@ Spain| :heavy_multiplication_x:
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Setup and utilization : <br/>
-1. Got to the *functions.py* script and change your chrome driver location on line 61
-2. Open *Scraper_final.py*, the two options are clearly defined there
+1. According to your country's vinted website, modify line 8 on */Codes/Scraper_final.py*
+1. Got to the *functions_YOURCOUNTRY.py* script and change your chrome driver location on line 61
+2. Open *Scraper_final.py*, the two options are clearly defined there, that is all : the package is ready for scraping ! :smiley:
 
 :information_source: Please report any bug/issue in the *issues* section or directly at sebcararo@hotmail.fr (Any feedback is really appreciated :speech_balloon: :+1:)
 
