@@ -14,7 +14,7 @@ from datetime import datetime
 global dict_order, dict_catalog, dict_size, dict_color, dict_brand, dict_condition
 dict_order = dict({'relevance': '&order=relevance','decreasing price' : '&order=price_high_to_low',\
 'increasing price' : '&order=price_low_to_high', 'most recent first' : '&order=newest_first'})
-dict_catalog = dict({'men':'&catalog[]=5', 'women':'&catalog[]=5', 'children': '&catalog[]=1193', \
+dict_catalog = dict({'men':'&catalog[]=5', 'women':'&catalog[]=1904', 'children': '&catalog[]=1193', \
 'home':'&catalog[]=1918'})
 dict_size = dict({'MenXS':'&size_id[]=206', 'MenS':'&size_id[]=207', 'MenM':'&size_id[]=208', 'MenL':'&size_id[]=209',\
 'MenXL':'&size_id[]=210', 'MenXXL':'&size_id[]=211', 'MenXXXL':'&size_id[]=212', 'Men4XL':'&size_id[]=308',\
