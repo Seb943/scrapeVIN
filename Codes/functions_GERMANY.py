@@ -14,7 +14,7 @@ from datetime import datetime
 global dict_order, dict_catalog, dict_size, dict_color, dict_brand, dict_condition
 dict_order = dict({'relevance': '&order=relevance','decreasing price' : '&order=price_high_to_low',\
 'increasing price' : '&order=price_low_to_high', 'most recent first' : '&order=newest_first'})
-dict_catalog = dict({'men':'&catalog[]=5', 'women':'&catalog[]=1904', 'children': '&catalog[]=1193'})
+dict_catalog = dict({'men':'&catalog[]=5', 'women':'&catalog[]=1904'})
 dict_size = dict({'MenXS':'&size_id[]=206', 'MenS':'&size_id[]=207', 'MenM':'&size_id[]=208', 'MenL':'&size_id[]=209',\
 'MenXL':'&size_id[]=210', 'MenXXL':'&size_id[]=211', 'MenXXXL':'&size_id[]=212', 'Men4XL':'&size_id[]=308',\
 'Men5XL':'&size_id[]=309', 'Men6XL':'&size_id[]=1192', 'Men7XL':'&size_id[]=1193', 'Men8XL':'&size_id[]=1194',\
@@ -43,10 +43,10 @@ dict_color = dict({'black':'&color_id[]=1', 'white':'&color_id[]=12', 'grey':'&c
 'green':'&color_id[]=10','dark green':'&color_id[]=28','khaki':'&color_id[]=16', 'brown':'&color_id[]=2',\
 'mustard':'&color_id[]=29', 'yellow':'&color_id[]=8', 'silver':'&color_id[]=13', 'golden':'&color_id[]=14',\
 'multicolor':'&color_id[]=15'})
-dict_brand = dict({'nike':'&brand_id[]=167', 'adidas': '&brand_id[]=269', 'zara':'&brand_id[]=36', "levi's":'&brand_id[]=281',\
-'h&m':'&brand_id[]=59', 'ralph lauren':'&brand_id[]=3073', 'mango':'&brand_id[]=155', 'lacoste':'&brand_id[]=395', \
-'calvin klein':'&brand_id[]=6451', 'tommy hilfiger': '&brand_id[]=201', 'guess':'&brand_id[]=199', 'michael kors':'&brand_id[]=181', \
-'jordan':'&brand_id[]=13971', 'puma':'&brand_id[]=259', 'balenciaga':'&brand_id[]=6899', 'vans':'&brand_id[]=313'})
+dict_brand = dict({'nike':'&brand_id[]=4', 'adidas': '&brand_id[]=54', 'zara':'&brand_id[]=16', "levi's":'&brand_id[]=374',\
+'h&m':'&brand_id[]=18', 'ralph lauren':'&brand_id[]=428394', 'mango':'&brand_id[]=20', 'lacoste':'&brand_id[]=90', \
+'calvin klein':'&brand_id[]=658', 'tommy hilfiger': '&brand_id[]=60', 'guess':'&brand_id[]=272', 'michael kors':'&brand_id[]=986', \
+'jordan':'&brand_id[]=120', 'puma':'&brand_id[]=312', 'balenciaga':'&brand_id[]=14406', 'vans':'&brand_id[]=1174'})
 dict_condition = dict({'new with tags':'&status[]=6', 'new without tags': '&status[]=1', 'very good condition': '&status[]=2', \
 'good condition':'&status[]=3', 'satisfactory':'&status[]=4'})
 
@@ -156,13 +156,13 @@ def research_and_scrape(query, criteria_string, end_page = 2):
         # start first page
         page = 1
         print('We start to scrape page n° {}'.format(page))
-        search_url = 'https://www.vinted.com/clothes?search_text=' + query.replace(' ', '%20') + criteria_string
+        search_url = 'https://www.kleiderkreisel.de/kleidung?search_text=' + query.replace(' ', '%20') + criteria_string
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
     
     for page in range(2, end_page + 1):
         print('We start to scrape page n° {}'.format(page))
-        search_url = 'https://www.vinted.com/clothes?search_text=' + query.replace(' ', '%20') + criteria_string + '&page={}'.format(page) # 
+        search_url = 'https://www.kleiderkreisel.de/kleidung?search_text=' + query.replace(' ', '%20') + criteria_string + '&page={}'.format(page) # 
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
 
@@ -191,42 +191,42 @@ def collect_info(page_url):
 
     # (c) Exctract info from the clean form
     try:
-        price = clean_data[0][1:]
+        price = re.split(' €', clean_data[0])[0]
     except:
         price = 'Na'
 
     try:
-        brand = clean_data[np.where([(y[:5]=='BRAND') for y in clean_data])[0][0]][5:].strip() # obtain brand without any spaces
+        brand = clean_data[np.where([(y[:5]=='MARKE') for y in clean_data])[0][0]][5:].strip() # obtain brand without any spaces
     except:
         brand = 'Na'
 
     try:
-        colors = clean_data[np.where([(y[:6]=='COLOUR') for y in clean_data])[0][0]][6:].strip() 
+        colors = clean_data[np.where([(y[:5]=='FARBE') for y in clean_data])[0][0]][5:].strip() 
     except:
         colors = 'Na'
 
     try:
-        size = clean_data[np.where([(y[:4]=='SIZE') for y in clean_data])[0][0]][4:].strip() 
+        size = clean_data[np.where([(y[:6]=='GRÖSSE') for y in clean_data])[0][0]][6:].strip() 
     except:
         size = 'Na'
 
     try:
-        condition = clean_data[np.where([(y[:9]=='CONDITION') for y in clean_data])[0][0]][9:].strip() 
+        condition = clean_data[np.where([(y[:7]=='ZUSTAND') for y in clean_data])[0][0]][7:].strip() 
     except:
         condition = 'Na'
 
     try:
-        views = clean_data[np.where([(y[:5]=='VIEWS') for y in clean_data])[0][0]][5:].strip() 
+        views = clean_data[np.where([(y[:6]=='KLICKS') for y in clean_data])[0][0]][6:].strip() 
     except:
         views = '0'
 
     try:
-        interested = re.split(' ',clean_data[np.where([(y[:10]=='INTERESTED') for y in clean_data])[0][0]][10:].strip())[0]
+        interested = re.split(' ',clean_data[np.where([(y[:9]=='ANGEFRAGT') for y in clean_data])[0][0]][9:].strip())[0]
     except:
         interested = '0'
 
     try:
-        location = clean_data[np.where([(y[:8]=='LOCATION') for y in clean_data])[0][0]][8:].strip() 
+        location = clean_data[np.where([(y[:9]=='BEZAHLUNG') for y in clean_data])[0][0]][9:].strip() 
     except:
         location = 'Na'
 
@@ -239,7 +239,7 @@ def collect_info(page_url):
             date = 'Na'
 
     try:
-        description = clean_data[np.where([(y[:8]=='UPLOADED') for y in clean_data])[0][0] + 1].strip() 
+        description = clean_data[np.where([(y[:11]=='HOCHGELADEN') for y in clean_data])[0][0] + 1].strip() 
     except:
         description = 'Na'
 
@@ -272,7 +272,7 @@ def collect_info(page_url):
 
 def interactive_version():
     # I - Ask query and criteria 
-    query = input("Which item do you want to research on vinted.co.uk ? \n")
+    query = input("Which item do you want to research on kleiderkreisel.de ? \n")
 
     print('\n Now a few criteria, you can skip any by pressing enter directly \n ')
     order_str = [input("Indicate order of search (1 choice max) among following choices : \n {} \n".format(dict_order.keys()))]
