@@ -29,8 +29,10 @@ Lithuania| :heavy_multiplication_x:
 
 *Scraper_final.py* overview : <br/>
 ![Scraper_final code](img/ScreenshotCode.PNG)
-...and then console when running code : <br/>
+..then console when running code : <br/>
 ![Scraper_final code running](img/Screenshot.PNG)
+..and finally the scraped data, saved in .csv format : <br/>
+![Table Overview](img/ScreenshotTable.PNG)
 
 :information_source: Please report any bug/issue in the *issues* section or directly at sebcararo@hotmail.fr (Any feedback is really appreciated :speech_balloon: :+1:)
 
