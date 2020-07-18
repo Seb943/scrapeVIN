@@ -43,10 +43,10 @@ dict_color = dict({'black':'&color_id[]=1', 'white':'&color_id[]=12', 'grey':'&c
 'green':'&color_id[]=10','dark green':'&color_id[]=28','khaki':'&color_id[]=16', 'brown':'&color_id[]=2',\
 'mustard':'&color_id[]=29', 'yellow':'&color_id[]=8', 'silver':'&color_id[]=13', 'golden':'&color_id[]=14',\
 'multicolor':'&color_id[]=15'})
-dict_brand = dict({'nike':'&brand_id[]=21', 'adidas': '&brand_id[]=24', 'zara':'&brand_id[]=17', "levi's":'&brand_id[]=51199',\
-'h&m':'&brand_id[]=16', 'ralph lauren':'&brand_id[]=92', 'mango':'&brand_id[]=27', 'lacoste':'&brand_id[]=100', \
-'calvin klein':'&brand_id[]=51', 'tommy hilfiger': '&brand_id[]=66', 'guess':'&brand_id[]=38', 'michael kors':'&brand_id[]=277', \
-'jordan':'&brand_id[]=536', 'puma':'&brand_id[]=32', 'balenciaga':'&brand_id[]=4431', 'vans':'&brand_id[]=254'})
+dict_brand = dict({'nike':'&brand_id[]=141', 'adidas': '&brand_id[]=74', 'zara':'&brand_id[]=9', "levi's":'&brand_id[]=21',\
+'h&m':'&brand_id[]=12', 'ralph lauren':'&brand_id[]=25', 'mango':'&brand_id[]=91', 'lacoste':'&brand_id[]=553', \
+'calvin klein':'&brand_id[]=335', 'tommy hilfiger': '&brand_id[]=555', 'guess':'&brand_id[]=155', 'michael kors':'&brand_id[]=1102', \
+'jordan':'&brand_id[]=4469', 'puma':'&brand_id[]=125', 'balenciaga':'&brand_id[]=16830', 'vans':'&brand_id[]=59'})
 dict_condition = dict({'new with tags':'&status[]=6', 'new without tags': '&status[]=1', 'very good condition': '&status[]=2', \
 'good condition':'&status[]=3', 'satisfactory':'&status[]=4'})
 
@@ -191,42 +191,42 @@ def collect_info(page_url):
 
     # (c) Exctract info from the clean form
     try:
-        price = re.split(' €', clean_data[0])[0]
+        price = re.split(' zł', clean_data[0])[0]
     except:
         price = 'Na'
 
     try:
-        brand = clean_data[np.where([(y[:14]=='PREKĖS ŽENKLAS') for y in clean_data])[0][0]][14:].strip() # obtain brand without any spaces
+        brand = clean_data[np.where([(y[:5]=='MARKA') for y in clean_data])[0][0]][5:].strip() # obtain brand without any spaces
     except:
         brand = 'Na'
 
     try:
-        colors = clean_data[np.where([(y[:6]=='SPALVA') for y in clean_data])[0][0]][6:].strip() 
+        colors = clean_data[np.where([(y[:5]=='KOLOR') for y in clean_data])[0][0]][5:].strip() 
     except:
         colors = 'Na'
 
     try:
-        size = clean_data[np.where([(y[:5]=='DYDIS') for y in clean_data])[0][0]][5:].strip() 
+        size = clean_data[np.where([(y[:7]=='ROZMIAR') for y in clean_data])[0][0]][7:].strip() 
     except:
         size = 'Na'
 
     try:
-        condition = clean_data[np.where([(y[:5]=='BŪKLĖ') for y in clean_data])[0][0]][5:].strip() 
+        condition = clean_data[np.where([(y[:4]=='STAN') for y in clean_data])[0][0]][4:].strip() 
     except:
         condition = 'Na'
 
     try:
-        views = clean_data[np.where([(y[:10]=='PERŽIŪRĖTA') for y in clean_data])[0][0]][10:].strip() 
+        views = clean_data[np.where([(y[:17]=='LICZBA WYŚWIETLEŃ') for y in clean_data])[0][0]][17:].strip() 
     except:
         views = '0'
 
     try:
-        interested = re.split(' ',clean_data[np.where([(y[:6]=='DOMISI') for y in clean_data])[0][0]][6:].strip())[0]
+        interested = re.split(' ',clean_data[np.where([(y[:14]=='ZAINTERESOWANE') for y in clean_data])[0][0]][14:].strip())[0]
     except:
         interested = '0'
 
     try:
-        location = clean_data[np.where([(y[:7]=='VIETOVĖ') for y in clean_data])[0][0]][7:].strip() 
+        location = clean_data[np.where([(y[:11]=='LOKALIZACJA') for y in clean_data])[0][0]][11:].strip() 
     except:
         location = 'Na'
 
@@ -239,7 +239,7 @@ def collect_info(page_url):
             date = 'Na'
 
     try:
-        description = clean_data[np.where([(y[:6]=='ĮKELTA') for y in clean_data])[0][0] + 1].strip() 
+        description = clean_data[np.where([(y[:6]=='DODANE') for y in clean_data])[0][0] + 1].strip() 
     except:
         description = 'Na'
 
@@ -272,7 +272,7 @@ def collect_info(page_url):
 
 def interactive_version():
     # I - Ask query and criteria 
-    query = input("Which item do you want to research on vinted.lt ? \n")
+    query = input("Which item do you want to research on vinted.pl ? \n")
 
     print('\n Now a few criteria, you can skip any by pressing enter directly \n ')
     order_str = [input("Indicate order of search (1 choice max) among following choices : \n {} \n".format(dict_order.keys()))]
