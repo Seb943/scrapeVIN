@@ -13,7 +13,7 @@ France, Belgium, Luxembourg, Netherlands, Spain (same exchange platform)| :heavy
 United States | :heavy_check_mark:
 United Kingdom| :heavy_check_mark:
 Germany| :heavy_check_mark:
-Lithuania| :heavy_check_mark:
+Lithuania| :heavy_multiplication_x:
 Poland| :heavy_check_mark:
 Czech Republic| :heavy_check_mark:
 
