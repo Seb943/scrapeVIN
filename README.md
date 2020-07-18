@@ -32,7 +32,10 @@ Lithuania| :heavy_multiplication_x:
 ..then console when running code : <br/>
 ![Scraper_final code running](img/Screenshot.PNG)
 ..and finally the scraped data, saved in .csv format : <br/>
-![Table Overview](img/ScreenshotTable.PNG)
+![Table Overview](img/ScreenshotTable.PNG) <br/>
+
+
+:information_source: You can also have a look at the */Codes/DataExploration.R* code, which displays a few interesting plots for future analysis. This can be a good starting point. A sampled of the plots are placed in the *Data/Exploratory Analysis Plots* directory. <br/>
 
 :information_source: Please report any bug/issue in the *issues* section or directly at sebcararo@hotmail.fr (Any feedback is really appreciated :speech_balloon: :+1:)
 
