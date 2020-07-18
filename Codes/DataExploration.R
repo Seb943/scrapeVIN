@@ -61,10 +61,15 @@ ggplot()+
 
 ggplot()+
   geom_point(aes(y=table$Price, x = 1, col = table$Condition))+
-  ylab("Price")
+  ylab("Price")+
+  labs(title = 'Price as a function of the condition')
 
 ggplot()+
-  geom_histogram(aes(x = table$Ratio))
+  geom_histogram(aes(x = table$Ratio), bins = length(table$Ratio)/10)+
+  scale_x_continuous(limits = c(0,0.25))+
+  scale_y_continuous(limits = c(0,100))+
+  labs(title = 'Ratio histogram')+
+  xlab("Ratio = Interested/Views")
 
 ggplot(data = table, aes(y = Price)) +
   geom_boxplot() +
@@ -73,7 +78,7 @@ ggplot(data = table, aes(y = Price)) +
        y = "Price")
 
 
-for(condition in levels(table$Condition)){
+for(condition in levels(as.factor(table$Condition))){
   print(condition)
   t <- table %>% filter(Condition == condition)
   p <- ggplot()+
