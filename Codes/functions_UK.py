@@ -156,13 +156,13 @@ def research_and_scrape(query, criteria_string, end_page = 2):
         # start first page
         page = 1
         print('We start to scrape page n° {}'.format(page))
-        search_url = 'https://www.vinted.com/clothes?search_text=' + query.replace(' ', '%20') + criteria_string
+        search_url = 'https://www.vinted.co.uk/clothes?search_text=' + query.replace(' ', '%20') + criteria_string
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
     
     for page in range(2, end_page + 1):
         print('We start to scrape page n° {}'.format(page))
-        search_url = 'https://www.vinted.com/clothes?search_text=' + query.replace(' ', '%20') + criteria_string + '&page={}'.format(page) # 
+        search_url = 'https://www.vinted.co.uk/clothes?search_text=' + query.replace(' ', '%20') + criteria_string + '&page={}'.format(page) # 
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
 
@@ -257,7 +257,7 @@ def collect_info(page_url):
                         'category': category,
                         'Price': price,
                         'Brand':brand,
-                        'Coluors': colors,
+                        'Colours': colors,
                         'Size':size,
                         'Condition':condition,
                         'Views':views,

@@ -257,7 +257,7 @@ def collect_info(page_url):
                         'category': category,
                         'Price': price,
                         'Brand':brand,
-                        'Coluors': colors,
+                        'Colours': colors,
                         'Size':size,
                         'Condition':condition,
                         'Views':views,
