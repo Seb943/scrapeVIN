@@ -9,16 +9,13 @@ unofficial VINTED API for Python
 :information_source:International versions coming soon! :soon: <br /><br />
 Website | State of development
 --------|----------------
-France, Belgium, Luxembourg| :heavy_check_mark:
+France, Belgium, Luxembourg, Netherlands, Spain (same exchange platform)| :heavy_check_mark:
 United States | :heavy_check_mark:
 United Kingdom| :heavy_check_mark:
-Germany| :heavy_multiplication_x:
-Austria| :heavy_multiplication_x:
-Lithuania| :heavy_multiplication_x:
-Poland| :heavy_multiplication_x:
-Czech Republic| :heavy_multiplication_x:
-Netherlands| :heavy_multiplication_x:
-Spain| :heavy_multiplication_x:
+Germany| :heavy_check_mark:
+Lithuania| :heavy_check_mark:
+Poland| :heavy_check_mark:
+Czech Republic| :heavy_check_mark:
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
