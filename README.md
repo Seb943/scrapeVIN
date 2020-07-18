@@ -1,5 +1,5 @@
 # scrapeVIN <br />
-:new::new::new:A python package for scraping vinted.fr :new::new::new:<br />
+:new::new::new:A python package for scraping vinted :new::new::new:<br />
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 unofficial VINTED API for Python 
@@ -13,18 +13,24 @@ France, Belgium, Luxembourg, Netherlands, Spain (same exchange platform)| :heavy
 United States | :heavy_check_mark:
 United Kingdom| :heavy_check_mark:
 Germany| :heavy_check_mark:
-Lithuania| :heavy_multiplication_x:
 Poland| :heavy_check_mark:
 Czech Republic| :heavy_check_mark:
+Lithuania| :heavy_multiplication_x:
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Setup and utilization : <br/>
+:information_source:Setup and utilization : <br/>
 1. According to your country's vinted website, modify line 8 on */Codes/Scraper_final.py*
 1. Got to the *functions_YOURCOUNTRY.py* script and change your chrome driver location on line 61
 2. Open *Scraper_final.py*, the two options are clearly defined there, that is all : the package is ready for scraping ! :smiley:
 
 -----> *e.g.* I want to scrape the US website, I modify line 8 on Scraper_final to from "functions_US import * ", then I go to line 61 in *functions_US* and indicate the location of my chrome driver, and finally I can use the package directly in the *Scraper_final.py* interface ! :100::100: 
+
+*Scraper_final.py* overview : <br/>
+![Scraper_final code](img/ScreenshotCode.PNG)
+...and then console when running code : <br/>
+![Scraper_final code running](img/Screenshot.PNG)
 
 :information_source: Please report any bug/issue in the *issues* section or directly at sebcararo@hotmail.fr (Any feedback is really appreciated :speech_balloon: :+1:)
 
