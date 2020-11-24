@@ -6,7 +6,6 @@ unofficial VINTED API for Python
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-:information_source:International versions coming soon! :soon: <br /><br />
 Website | State of development
 --------|----------------
 France, Belgium, Luxembourg, Netherlands, Spain (same exchange platform)| :heavy_check_mark:
