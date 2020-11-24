@@ -58,7 +58,7 @@ options = webdriver.ChromeOptions()
 #options.add_argument('--ignore-ssl-errors')
 #options.add_experimental_option("prefs", {"profile.default_content_setting_values.cookies": 2})
 global DRIVER_LOCATION
-DRIVER_LOCATION = "C:\\Users\\Sébastien CARARO\\Desktop\\chromedriver1.exe"
+DRIVER_LOCATION = "C:\\Users\\Utilisateur\\Desktop\\scrapeOP-master\\chromedriver_win32\\chromedriver.exe"
 
 driver = webdriver.Chrome(executable_path = DRIVER_LOCATION, chrome_options=options)
 
@@ -94,7 +94,7 @@ def ffi2(a):
 
 def advance(data, i):
     print(i)
-    usr = driver.find_elements_by_xpath('//*[contains(@id, "CatalogItems-react-component")]')[0]
+    usr = driver.find_elements_by_xpath('//*[contains(@id, "Catalog-react-component")]')[0]
     usr.find_element_by_xpath('./div/div/div[{}]/div/div/div/div[2]/a'.format(i)).click() # click on result n°i
     new_data = collect_info(driver.current_url)
     print(new_data)
@@ -110,6 +110,7 @@ def scrape_research_page(search_url):
         if c == 10: # if there are 10 articles in a row we cannot scrape, we consider we finished to scrape the page
             return(data)
         driver.get(search_url)
+        #time.sleep(5)
         try:
             data = advance(data,i)
             c=0
@@ -158,6 +159,9 @@ def research_and_scrape(query, criteria_string, end_page = 2):
         page = 1
         print('We start to scrape page n° {}'.format(page))
         search_url = 'https://www.vinted.fr/vetements?search_text=' + query.replace(' ', '%20') + criteria_string
+        driver.get(search_url)
+        input("You might need to manually accept the cookies (only necessary at page 1).\n Press Enter to continue when it is done (or not displayed on the site)...")
+        print('Thanks!')
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
     

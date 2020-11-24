@@ -93,7 +93,7 @@ def ffi2(a):
 
 def advance(data, i):
     print(i)
-    usr = driver.find_elements_by_xpath('//*[contains(@id, "CatalogItems-react-component")]')[0]
+    usr = driver.find_elements_by_xpath('//*[contains(@id, "Catalog-react-component")]')[0]
     usr.find_element_by_xpath('./div/div/div[{}]/div/div/div/div[2]/a'.format(i)).click() # click on result n°i
     new_data = collect_info(driver.current_url)
     print(new_data)
@@ -157,6 +157,9 @@ def research_and_scrape(query, criteria_string, end_page = 2):
         page = 1
         print('We start to scrape page n° {}'.format(page))
         search_url = 'https://www.vinted.cz/predmety?search_text=' + query.replace(' ', '%20') + criteria_string
+        driver.get(search_url)
+        input("You might need to manually accept the cookies (only necessary at page 1).\n Press Enter to continue when it is done (or not displayed on the site)...")
+        print('Thanks!')
         DATA_ALL = DATA_ALL.append(scrape_research_page(search_url))
         print('We finished to scrape page n° {}'.format(page))
     
