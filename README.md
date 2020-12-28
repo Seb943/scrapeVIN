@@ -37,6 +37,7 @@ Lithuania| :heavy_multiplication_x:
 :information_source: You can also have a look at the */Codes/DataExploration.R* code, which displays a few interesting plots for future analysis. This can be a good starting point. A sampled of the plots are placed in the *Data/Exploratory Analysis Plots* directory. <br/>
 
 :information_source: Please report any bug/issue in the *issues* section or directly at sebcararo@hotmail.fr (Any feedback is really appreciated :speech_balloon: :+1:). A :star2: is also greatly appreciated :raised_hands:. </br>
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
