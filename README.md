@@ -61,8 +61,7 @@ Fonctionnalités :
 - Version interactive : l'utilisateur peut simplement répondre aux questions du programme pour faire la recherche à travers l'API
 
 [1] Vinted Wikipedia EN : https://en.wikipedia.org/wiki/Vinted <br />
-[2] Vinted Wikipedia FR : https://fr.wikipedia.org/wiki/Vinted
+[2] Vinted Wikipedia FR : https://fr.wikipedia.org/wiki/Vinted <br/>
 
-Just in Case... <br/>
 BTC : 3PkoHLXmXsL8kBrFu7GQ8kpmzPBmNK6m8B <br/>
 ETH : 0xFdbB5aF291cB7e711D62c1E4a8B58d0EbD423F9C
