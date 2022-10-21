@@ -70,17 +70,17 @@ driver = webdriver.Chrome(executable_path = DRIVER_LOCATION, chrome_options=opti
 
 def fi(a):
     try:
-        driver.find_element_by_xpath(a).text
+        driver.find_element("xpath", a).text
     except:
         return False
 
 def ffi(a):
     if fi(a) != False :
-        return driver.find_element_by_xpath(a).text
+        return driver.find_element("xpath", a).text
 
 def fi2(a):
     try:
-        driver.find_element_by_xpath(a).click()
+        driver.find_element("xpath", a).click()
     except:
         return False
 
@@ -93,8 +93,8 @@ def ffi2(a):
 
 def advance(data, i):
     print(i)
-    usr = driver.find_elements_by_xpath('//*[contains(@id, "Catalog-react-component")]')[0]
-    usr.find_element_by_xpath('./div/div/div[{}]/div/div/div/div[2]/a'.format(i)).click() # click on result n°i
+    usr = driver.find_element("xpath", '//*[contains(@id, "Catalog-react-component")]')[0]
+    usr.find_element("xpath", './div/div/div[{}]/div/div/div/div[2]/a'.format(i)).click() # click on result n°i
     new_data = collect_info(driver.current_url)
     print(new_data)
     data = data.append(new_data)
